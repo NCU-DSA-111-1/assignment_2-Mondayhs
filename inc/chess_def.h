@@ -46,39 +46,32 @@ int is_empty(Stack_t *const stk);
 void push(Stack_t *const , void* );
 void pop(Stack_t *const stk, void *des, long size);
 
+/*-----------------Move Chess-------------------*/
+int move_chess_R,move_chess_C;  //要移動的棋子
+int loc_chess_R,loc_chess_C;    //移動的目標位置
+int Rm,Cm;
+int Rp,Cp;
+
+
+/*-----------------Rule-------------------*/
+bool isStandard ;//是否符合規則，初始值1，符合
+bool restart ;
+bool gameOverSign ;//遊戲是否結束，0結束
+
 /*-----------------Chess funtion-------------------*/
 
 void chessboardBuilding(void);
+void chessPointer_Init(void);
+void chessboardPrint(void);
 void redMove(void);
 void blueMove(void);
 Node_t *find_chess(int Row_chess,int Col_chess);
+void find_location(int Row_chess,int Col_chess);
 int redOrBlue(Node_t *loc_ch);
-void Get_chess( Node_t *mov_ch, Node_t *loc_ch );
-void rulesOfAllKindsOfChessPieces( Node_t *mov_ch, Node_t *loc_ch );
+void Get_chess(void);
+void rulesOfAllKindsOfChessPieces(void);
+void isGameOver(void);
+
 
 #endif 
 
-
-// void Get_chess( )//int mov_row, int mov_col, int loc_row, int loc_col)
-// {   
-//     if(redOrBlue(loc_row, loc_col) == 1)
-//     {
-//         swap( &(array[Rp][Cp]) , &(array[Rm][Cm]));
-        
-
-//         char pop_data;
-//         pop(array[Rp][Cp], (void*) &pop_data, sizeof(char));
-//         push(Red_get, (void*) &pop_data);
-
-//     }
-//     else if(redOrBlue(loc_row, loc_col) == -1)
-//     {
-        
-        
-//     }
-//     else
-//     {
-//         swap( &(array[Rp][Cp]) , &(array[Rm][Cm]));
-//         //swap( &array[mov_row][mov_col] , &array[loc_row][loc_col]);
-//     }
-// }
