@@ -37,10 +37,6 @@ int b_i=0;
 // blue_get = init_stack();
 
 
-// #define CHAR_ALL  ((CHAR*)all_chess->top->value)
-// #define CHAR_RED  ((CHAR*)red_get->top->value)
-// #define CHAR_BLUE  ((CHAR*)blue_get->top->value)
-
 
 /*-----------------------------Stack funtion------------------------------*/
 Stack_t *init_stack(){
@@ -179,72 +175,6 @@ void chessboardPrint(void)
     }
 }
 
-//紅棋移動
-void redMove(){
-    move_chess = init_node();
-    location = init_node();
-    if (restart) {
-        printf("違反遊戲規則，請重新輸入\n");
-        restart = 0;
-    }
-    printf("[紅棋]請輸入你要移動的棋子:\n");
-    scanf("%d %d",&move_chess_R, &move_chess_C);
-    move_chess = find_chess((move_chess_R-1), (move_chess_C-1));
-    printf("[紅棋]移動的棋子為:\n");
-    printf("%s%s", (char*)move_chess->value,"\n");
-    printf("[紅棋]請輸入你要放置的位置:\n");
-    scanf("%d %d",&loc_chess_R, &loc_chess_C);
-    location = find_chess((loc_chess_R-1), (loc_chess_C-1));
-    printf("[紅棋]放置位置為:\n");
-    printf("%s%s", (char*)location->value ,"\n");
-    rulesOfAllKindsOfChessPieces();
-    chessboardPrint();
-}
-
-//藍棋移動
-void blueMove(){
-    move_chess = init_node();
-    location = init_node();
-    if (restart) {
-        printf("違反遊戲規則，請重新輸入\n");
-        restart = 0;
-    }
-    printf("[藍棋]請輸入你要移動的棋子:\n");
-    scanf("%d %d",&move_chess_R,&move_chess_C);
-    move_chess = find_chess(move_chess_R-1, move_chess_C-1);
-    printf("[藍棋]移動的棋子為:\n");
-    printf("%s%s", (char*)move_chess->value,"\n");
-    printf("[藍棋]請輸入你要放置的位置:\n");
-    scanf("%d %d",&loc_chess_R,&loc_chess_C);
-    location = find_chess((loc_chess_R-1), (loc_chess_C-1));
-    printf("[藍棋]放置位置為:\n");
-    printf("%s%s", (char*)location->value ,"\n");
-    rulesOfAllKindsOfChessPieces();
-    chessboardPrint();
-}
-
-Node_t *find_chess(int Row_chess,int Col_chess){
-    chessPointer_Init();
-    Node_t* stk = (Node_t*)malloc(sizeof(Node_t)); 
-    stk = NULL;
-    stk = all_chess->top;
-    int stop_pt = (Row_chess)*9+(Col_chess);
-    for (int i = 0; i < stop_pt ; i ++) {
-        stk = stk -> next;
-    }
-    return stk;
-}
-
-void find_location(int Row_chess,int Col_chess){
-    chessPointer_Init();
-    int stop_pt = (Row_chess)*9+(Col_chess);
-    for (int i = 0; i < stop_pt ; i ++) {
-        all_chess->top = all_chess->top -> next;
-    }
-}
-
-
-
 // 判斷是紅棋還是藍棋,紅旗返回-1,藍棋返回1,否則返回0
 int redOrBlue(Node_t *loc_ch){
     if (loc_ch->value == &R_soldier || loc_ch->value == &R_car || loc_ch->value == &R_hours || loc_ch->value == &R_sliver || loc_ch->value == &R_corner || loc_ch->value == &R_fly || loc_ch->value == &R_gold || loc_ch->value == &R_king){
@@ -257,15 +187,6 @@ int redOrBlue(Node_t *loc_ch){
         return 0;
     
 }
-
-
-
-// void swap( Node_t **address_a , Node_t **address_b ){
-//     Node_t *temp = *(address_a);
-//     *address_a = *(address_b);
-//     *address_b = temp;
-// }
-
 void Get_chess()
 {   
     if(redOrBlue(location) == 1)
@@ -498,11 +419,7 @@ void rulesOfAllKindsOfChessPieces()// Node_t *mov_ch, Node_t *loc_ch )
             Get_chess();
         }
     }
-
-
-
 }
-
 
 // 判斷遊戲結束
 void isGameOver(void){

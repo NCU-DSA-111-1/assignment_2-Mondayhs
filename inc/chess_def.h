@@ -52,25 +52,39 @@ int loc_chess_R,loc_chess_C;    //移動的目標位置
 int Rm,Cm;
 int Rp,Cp;
 
+int r_i;
+int b_i;
 
 /*-----------------Rule-------------------*/
 bool isStandard ;//是否符合規則，初始值1，符合
 bool restart ;
 bool gameOverSign ;//遊戲是否結束，0結束
 
-/*-----------------Chess funtion-------------------*/
 
+
+/*++++++++++++++++++++++"Chess funtion"++++++++++++++++++++++++*/
+/**----------Chess board & rules------------**/
 void chessboardBuilding(void);
 void chessPointer_Init(void);
 void chessboardPrint(void);
-void redMove(void);
-void blueMove(void);
-Node_t *find_chess(int Row_chess,int Col_chess);
-void find_location(int Row_chess,int Col_chess);
 int redOrBlue(Node_t *loc_ch);
 void Get_chess(void);
 void rulesOfAllKindsOfChessPieces(void);
 void isGameOver(void);
+
+/**---------------Chess move----------------**/
+void redMove(void);
+void blueMove(void);
+Node_t *find_chess(int Row_chess,int Col_chess);
+void find_location(int Row_chess,int Col_chess);
+
+// 悔棋功能
+int other_fun(void);
+
+/*----------------"Chessboard Read and write "-------------------*/
+void write_chessboard(void);
+void Read_chessboard(void);
+
 
 
 #endif 
