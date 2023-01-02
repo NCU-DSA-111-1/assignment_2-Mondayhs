@@ -110,6 +110,7 @@ int other_fun(void){
     printf(" NOTE-0: 沒有任何問題？ 按下「y」or 「Y」：\n");
     printf(" NOTE-1: 是否確定放置為以上？ 若想悔棋請按下「O」：\n");
     printf(" NOTE-2: 是否想要休息一下稍等玩？ 若想存檔請按下「s」：\n");
+
     scanf("%s",&fun_t);
     if (fun_t == ('y' | 'Y')){
         ret = 0;
@@ -123,6 +124,18 @@ int other_fun(void){
         write_chessboard();
         ret = 2;
     }
+    
     return ret;
 }
 
+int read_last(void){
+    char fun_t;
+    int ret=0;
+    printf("------------------- 您需要以下的服務嗎 ？--------------------------");
+    printf(" NOTE-0: 沒有任何問題？ 按下「y」or 「Y」：\n");
+    if (fun_t == ('r' | 'R')){
+        printf("下次見！\n");
+        Read_chessboard();
+        ret = 3;
+    }
+}

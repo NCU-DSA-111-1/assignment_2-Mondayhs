@@ -162,6 +162,40 @@ void chessPointer_Init(void)
     }
 }
 
+// void chessboardPrint(void)
+// {
+//     printf("  \033[43;30m 將旗 \033[0m\n\n");
+//     chessPointer_Init();
+//     for (int i = 0; i < ROW+1 ; i ++) {
+//         for (int j = 0; j < COL+1 ; j ++){
+//             if ( (i==9 && j==0) || (i==0 && j==9) )
+//                 printf("1");
+//             else if ((i==9 && j==1) || (i==1 && j==9))
+//                 printf("2");
+//             else if ((i==9 && j==2) || (i==2 && j==9))
+//                 printf("3");
+//             else if ((i==9 && j==3) || (i==3 && j==9))
+//                 printf("4");
+//             else if ((i==9 && j==4) || (i==4 && j==9))
+//                 printf("5");
+//             else if ((i==9 && j==5) || (i==5 && j==9))
+//                 printf("6");
+//             else if ((i==9 && j==6) || (i==6 && j==9))
+//                 printf("7");
+//             else if ((i==9 && j==7) || (i==7 && j==9))
+//                 printf("8");
+//             else if ((i==9 && j==8) || (i==8 && j==9))
+//                 printf("9");
+//             else if (i==9 && j==9)
+//                 printf("段/筋");
+//             else
+//                 printf("%s", (char*)all_chess->top->value);
+//                 all_chess->top = all_chess->top -> next;
+//         }
+//         printf("\n");
+//     }
+// }
+
 void chessboardPrint(void)
 {
     printf("  \033[43;30m 將旗 \033[0m\n\n");
