@@ -20,13 +20,14 @@ const char B_gold[] = B(金);
 const char B_king[] = B(王);
 
 
+
 /*-----------------Rule-------------------*/
 bool isStandard = 1;//是否符合規則，初始值1，符合
 bool restart = 0;
 bool gameOverSign = 1;//遊戲是否結束，0結束
 
-int r_i=0;
-int b_i=0;
+int r_i = 0;
+int b_i = 0;
 
 
 

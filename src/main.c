@@ -2,10 +2,20 @@
 
 
 
+
 //**************************主函數******************************//
 int main(){
+    // Read_chessboard();
     //生成棋盤
-    chessboardBuilding();
+    int read_fun = 0 ;
+    read_fun = read_last();
+    if (read_fun == 0){
+        Read_chessboard();
+    }
+    else if (read_fun == 1){
+        chessboardBuilding();
+        
+    }
     chessboardPrint();
     //開始下棋
     int turn = -1;

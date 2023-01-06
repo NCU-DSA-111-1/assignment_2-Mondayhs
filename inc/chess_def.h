@@ -16,8 +16,7 @@
 #define R(piece) "\033[31m"#piece"\033[0m"//紅色棋子
 #define CROSS "\033[33m十\033[0m"
 
-
-
+static char chess_all[ROW*COL][20];
 
 /*-----------------Stack-------------------*/
 
@@ -80,8 +79,11 @@ void find_location(int Row_chess,int Col_chess);
 
 // 悔棋功能
 int other_fun(void);
-
+// 玩上一局功能
+int read_last(void);
 /*----------------"Chessboard Read and write "-------------------*/
+// char chess_t
+;
 void write_chessboard(void);
 void Read_chessboard(void);
 

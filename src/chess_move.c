@@ -106,7 +106,7 @@ void find_location(int Row_chess,int Col_chess){
 int other_fun(void){
     char fun_t;
     int ret=0;
-    printf("-------------------您需要以下的服務嗎？--------------------------");
+    printf("-------------------您需要以下的服務嗎？--------------------------\n");
     printf(" NOTE-0: 沒有任何問題？ 按下「y」or 「Y」：\n");
     printf(" NOTE-1: 是否確定放置為以上？ 若想悔棋請按下「O」：\n");
     printf(" NOTE-2: 是否想要休息一下稍等玩？ 若想存檔請按下「s」：\n");
@@ -131,11 +131,17 @@ int other_fun(void){
 int read_last(void){
     char fun_t;
     int ret=0;
-    printf("------------------- 您需要以下的服務嗎 ？--------------------------");
-    printf(" NOTE-0: 沒有任何問題？ 按下「y」or 「Y」：\n");
+    printf("------------------- 您是要玩上一場遊戲嗎 ？--------------------------\n");
+    printf(" 要 請按下「r」or 「R」： \n");
+    printf(" 不要，我要開新的一局 請打「n」： \n");
+    scanf("%s",&fun_t);
     if (fun_t == ('r' | 'R')){
-        printf("下次見！\n");
-        Read_chessboard();
-        ret = 3;
+        printf(" 又見面了！ \n");
+        ret = 0;
     }
+    else if (fun_t == ('n' | 'N')){
+        printf(" 讓我們繼續玩下去吧！ \n");
+        ret = 1;
+    }
+    return ret;
 }
