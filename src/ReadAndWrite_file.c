@@ -39,10 +39,8 @@ void Read_chessboard(void){
         push(all_chess, (void*) &chess_all[n]); 
         n++;
     }
-    printf("%s\n", "-------1111");
-    printf("%s\n",(char*) chess_all[2]);
-    // push(all_chess, (void*) &chess_t); 
-    printf("%s\n", (char*)all_chess->top->previous->value);
+    // printf("%s\n", "-------1111");
+    // printf("%s\n",(char*) chess_all[2]);
 
 
     // chessboardPrint();
