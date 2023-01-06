@@ -18,6 +18,7 @@ assignment_2-Mondayhs/
         ├──README.md    # this file 
         ├──assignment#2.docx    
         └──assignment#2.pdf
+        └──shogi_arrary # first test by array
 ```
 
 
