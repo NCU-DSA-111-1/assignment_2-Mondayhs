@@ -1,6 +1,6 @@
 # Shogi-linklist
 
-[Introduce](https://en.wikipedia.org/wiki/Shogi)
+[Introduce (wiki)](https://en.wikipedia.org/wiki/Shogi)
 
  > * Created on: 2022/12/08 
  > * Author: Yi Hsuan Chou  
