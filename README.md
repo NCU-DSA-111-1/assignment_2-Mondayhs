@@ -1,5 +1,8 @@
 # Shogi-linklist
 
+ > * Created on: 2022/12/08 
+ > * Author: Yi Hsuan Chou  
+ 
 
 ## File structure
 ```bash
