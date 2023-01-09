@@ -1,23 +1,23 @@
 #include "chess_def.h"
 
 /*-----------------Red Chess-------------------*/
-const char R_soldier[] = R(步);
-const char R_car[] = R(香);
-const char R_hours[] = R(桂);
-const char R_sliver[] = R(銀);
-const char R_corner[] = R(角);
-const char R_fly[] = R(飛);
-const char R_gold[] = R(金);
-const char R_king[] = R(王);
+static const char R_soldier[] = R(步);
+static const char R_car[] = R(香);
+static const char R_hours[] = R(桂);
+static const char R_sliver[] = R(銀);
+static const char R_corner[] = R(角);
+static const char R_fly[] = R(飛);
+static const char R_gold[] = R(金);
+static const char R_king[] = R(王);
 /*-----------------Blue Chess-------------------*/
-const char B_soldier[] = B(步);
-const char B_car[] = B(香);
-const char B_hours[] = B(桂);
-const char B_sliver[] = B(銀);
-const char B_corner[] = B(角);
-const char B_fly[] = B(飛);
-const char B_gold[] = B(金);
-const char B_king[] = B(王);
+static const char B_soldier[] = B(步);
+static const char B_car[] = B(香);
+static const char B_hours[] = B(桂);
+static const char B_sliver[] = B(銀);
+static const char B_corner[] = B(角);
+static const char B_fly[] = B(飛);
+static const char B_gold[] = B(金);
+static const char B_king[] = B(王);
 
 
 
@@ -152,7 +152,7 @@ void chessboardBuilding(void)
             }
         }
     }
-    push(all_chess, NULL);//(void*) &CROSS);
+    push(all_chess, NULL); 
 }
 
 void chessPointer_Init(void)
@@ -220,10 +220,8 @@ int redOrBlue(Node_t *loc_ch){
     }
     else
         return 0;
-    
 }
-void Get_chess()
-{   
+void Get_chess(){   
     if(redOrBlue(location) == 1)
     {
         find_location(Rp,Cp);

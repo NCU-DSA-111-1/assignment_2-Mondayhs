@@ -86,6 +86,7 @@ int read_last(void);
 ;
 void write_chessboard(void);
 void Read_chessboard(void);
+void identify_chess(char  *chess_t);
 
 
 

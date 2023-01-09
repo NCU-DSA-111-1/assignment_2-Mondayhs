@@ -17,6 +17,7 @@ void redMove(void){
     printf("[紅棋]請輸入你要移動的棋子:\n");
     scanf("%d %d",&move_chess_R, &move_chess_C);
     move_chess = find_chess((move_chess_R-1), (move_chess_C-1));
+    // printf("%s%s", (char*)move_chess->value,"\n");       //test
     if (redOrBlue(move_chess) == -1){
         printf("[紅棋]移動的棋子為:\n");
         printf("%s%s", (char*)move_chess->value,"\n");
@@ -26,14 +27,14 @@ void redMove(void){
         printf("[紅棋]放置位置為:\n");
         printf("%s%s", (char*)location->value ,"\n");
         ot_fun = other_fun();
-        if (ot_fun == 0){
+        if (ot_fun == 1){
             rulesOfAllKindsOfChessPieces();
             chessboardPrint();
         }
-        else if (ot_fun == 1){
+        else if (ot_fun == 2){
             redMove();
         }
-        else if (ot_fun == 2){
+        else if (ot_fun == 3){
             exit(1);
         }
     }
@@ -55,6 +56,7 @@ void blueMove(void){
     printf("[藍棋]請輸入你要移動的棋子:\n");
     scanf("%d %d",&move_chess_R,&move_chess_C);
     move_chess = find_chess(move_chess_R-1, move_chess_C-1);
+    // printf("%s%s", (char*)move_chess->value,"\n");
     if (redOrBlue(move_chess) == 1){
         printf("[藍棋]移動的棋子為:\n");
         printf("%s%s", (char*)move_chess->value,"\n");
@@ -64,20 +66,21 @@ void blueMove(void){
         printf("[藍棋]放置位置為:\n");
         printf("%s%s", (char*)location->value ,"\n");
         ot_fun = other_fun();
-        if (ot_fun == 0){
+        if (ot_fun == 1){
             rulesOfAllKindsOfChessPieces();
             chessboardPrint();
         }
-        else if (ot_fun == 1){
+        else if (ot_fun == 2){
             blueMove();
         }
-        else if (ot_fun == 2){
+        else if (ot_fun == 3){
             exit(1);
         }
     }
-    else
+    else{
         printf("您選錯旗子了！ 請重新輸入。 \n");
         blueMove();
+    }
 }
 
 Node_t *find_chess(int Row_chess,int Col_chess){
@@ -113,16 +116,16 @@ int other_fun(void){
 
     scanf("%s",&fun_t);
     if (fun_t == ('y' | 'Y')){
-        ret = 0;
+        ret = 1;
     }
     else if (fun_t == ( 'O' | 'o' )){
         printf("你悔棋請重新輸入！\n");
-        ret = 1;
+        ret = 2;
     }
     else if (fun_t == ('s' | 'S')){
         printf("下次見！\n");
         write_chessboard();
-        ret = 2;
+        ret = 3;
     }
     
     return ret;
