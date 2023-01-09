@@ -10,7 +10,7 @@ void redMove(void){
     move_chess = init_node();
     location = init_node();
     if (restart) {
-        printf("違反遊戲規則，請重新輸入\n");
+        printf("\033[36m違反遊戲規則，請重新輸入\033[0m\n");
         restart = 0;
     }
     printf("玩家 Y : \n");
@@ -38,9 +38,10 @@ void redMove(void){
             exit(1);
         }
     }
-    else 
-        printf("您選錯旗子了！ 請重新輸入。 \n");
+    else{ 
+        printf("\033[36m您選錯旗子了！ 請重新輸入。\033[0m \n");
         redMove();
+    }
 }
 
 //藍棋移動
@@ -78,7 +79,7 @@ void blueMove(void){
         }
     }
     else{
-        printf("您選錯旗子了！ 請重新輸入。 \n");
+        printf("\033[36m您選錯旗子了！ 請重新輸入。\033[0m \n");
         blueMove();
     }
 }
@@ -109,7 +110,7 @@ void find_location(int Row_chess,int Col_chess){
 int other_fun(void){
     char fun_t;
     int ret=0;
-    printf("-------------------您需要以下的服務嗎？--------------------------\n");
+    printf("\033[36m-------------------您需要以下的服務嗎？--------------------------\033[0m\n");
     printf(" NOTE-0: 沒有任何問題？ 按下「y」or 「Y」：\n");
     printf(" NOTE-1: 是否確定放置為以上？ 若想悔棋請按下「O」：\n");
     printf(" NOTE-2: 是否想要休息一下稍等玩？ 若想存檔請按下「s」：\n");
@@ -118,12 +119,12 @@ int other_fun(void){
     if (fun_t == ('y' | 'Y')){
         ret = 1;
     }
-    else if (fun_t == ( 'O' | 'o' )){
-        printf("你悔棋請重新輸入！\n");
+    else if (fun_t == ( 'O' | 'o' | '0' )){
+        printf("\033[35m你悔棋請重新輸入！\033[0m\n");
         ret = 2;
     }
     else if (fun_t == ('s' | 'S')){
-        printf("下次見！\n");
+        printf("\033[35m下次見！\033[0m\n");
         write_chessboard();
         ret = 3;
     }
@@ -134,16 +135,16 @@ int other_fun(void){
 int read_last(void){
     char fun_t;
     int ret=0;
-    printf("------------------- 您是要玩上一場遊戲嗎 ？--------------------------\n");
+    printf("------------------- \033[36m您是要玩上一場遊戲嗎 ？\033[0m--------------------------\n");
     printf(" 要 請按下「r」or 「R」： \n");
     printf(" 不要，我要開新的一局 請打「n」： \n");
     scanf("%s",&fun_t);
     if (fun_t == ('r' | 'R')){
-        printf(" 又見面了！ \n");
+        printf(" \033[35m又見面了！\033[0m \n");
         ret = 0;
     }
     else if (fun_t == ('n' | 'N')){
-        printf(" 讓我們繼續玩下去吧！ \n");
+        printf(" \033[35m 讓我們玩下去吧！\033[0m \n");
         ret = 1;
     }
     return ret;

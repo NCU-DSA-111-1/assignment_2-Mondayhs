@@ -22,7 +22,7 @@ int main(){
     int turn = -1;
     while (gameOverSign) {
         isStandard = 1;
-        turn *= (1);       //雙方交替下棋
+        turn *= (-1);       //雙方交替下棋
         switch (turn) {
             case 1:
                 // redMove();

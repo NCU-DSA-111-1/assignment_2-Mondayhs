@@ -62,7 +62,7 @@ void Read_chessboard(void){
         // printf("%d",n++);
     }
     push(all_chess, NULL);
-    printf("%lu\n", sizeof((char*)all_chess->top->previous->previous->value));
+    // printf("%lu\n", sizeof((char*)all_chess->top->previous->previous->value));
     // chessboardPrint();
     fclose(fptr);
     
