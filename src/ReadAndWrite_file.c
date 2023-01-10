@@ -1,5 +1,5 @@
 #include "chess_def.h"
-
+#include "stack.h"
 /*-----------------Red Chess-------------------*/
 static const char R_soldier[] = R(步);
 static const char R_car[] = R(香);

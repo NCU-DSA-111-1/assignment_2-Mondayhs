@@ -1,4 +1,5 @@
 #include "chess_def.h"
+#include "stack.h"
 
 void Move_rule(void){
     printf("輸入座標(段與筋)，段與筋皆為數字(1-9)，先輸入段(行)，再輸入筋(列)，(若輸入 O，表示悔棋，可連續悔棋)。");

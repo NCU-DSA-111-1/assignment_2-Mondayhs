@@ -1,5 +1,5 @@
 #include "chess_def.h"
-
+#include "stack.h"
 
 
 

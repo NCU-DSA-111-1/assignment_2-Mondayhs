@@ -1,4 +1,6 @@
+#include "stack.h"
 #include "chess_def.h"
+
 
 /*-----------------Red Chess-------------------*/
 static const char R_soldier[] = R(步);
@@ -39,51 +41,51 @@ int b_i = 0;
 
 
 
-/*-----------------------------Stack funtion------------------------------*/
-Stack_t *init_stack(){
-    Stack_t* stk = (Stack_t*)malloc(sizeof(Stack_t)); 
-    stk->top = NULL;
-    return stk;
-}
+// /*-----------------------------Stack funtion------------------------------*/
+// Stack_t *init_stack(){
+//     Stack_t* stk = (Stack_t*)malloc(sizeof(Stack_t)); 
+//     stk->top = NULL;
+//     return stk;
+// }
 
-Node_t *init_node(){
-    Node_t* stk = (Node_t*)malloc(sizeof(Node_t)); 
-    stk = NULL;
-    return stk;
-}
+// Node_t *init_node(){
+//     Node_t* stk = (Node_t*)malloc(sizeof(Node_t)); 
+//     stk = NULL;
+//     return stk;
+// }
 
-void push(Stack_t *const stk, void* src){
-    Node_t *node = (Node_t *)malloc(sizeof(Node_t));
-    node->value = src;
-    node->previous = NULL;
+// void push(Stack_t *const stk, void* src){
+//     Node_t *node = (Node_t *)malloc(sizeof(Node_t));
+//     node->value = src;
+//     node->previous = NULL;
 
-    if(stk->top) {
-        stk->top->next = node;
-        node->previous = stk->top;
-    }
-    stk->top = node;
+//     if(stk->top) {
+//         stk->top->next = node;
+//         node->previous = stk->top;
+//     }
+//     stk->top = node;
 
-    return;
-}
-
-
-int is_empty(Stack_t *const stk){
-    return !stk->top;
-}
+//     return;
+// }
 
 
-void pop(Stack_t *const stk, void *des, long size){
-    if(is_empty(stk)){
-        printf("Stack is empty!\n");
-        return;
-    }
+// int is_empty(Stack_t *const stk){
+//     return !stk->top;
+// }
 
-    Node_t *temp =  stk->top;
-    stk->top = temp->previous;
-    memcpy(des, temp->value, size);
-    free(temp);
-    return;
-}
+
+// void pop(Stack_t *const stk, void *des, long size){
+//     if(is_empty(stk)){
+//         printf("Stack is empty!\n");
+//         return;
+//     }
+
+//     Node_t *temp =  stk->top;
+//     stk->top = temp->previous;
+//     memcpy(des, temp->value, size);
+//     free(temp);
+//     return;
+// }
 
 
 /*-----------------------------Chess funtion------------------------------*/

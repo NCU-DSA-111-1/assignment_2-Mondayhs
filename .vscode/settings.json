@@ -24,6 +24,7 @@
         "memory": "c",
         "utility": "c",
         "variant": "c",
-        "__locale": "c"
+        "__locale": "c",
+        "stack.h": "c"
     }
 }
